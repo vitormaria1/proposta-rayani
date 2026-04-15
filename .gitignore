@@ -1,0 +1,28 @@
+# Arquivo de Imagens (se não quiser versioná-las)
+# rayani-photo.jpg
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# Build
+dist/
+build/
+*.zip
+
+# Misc
+.cache/
+.temp/
