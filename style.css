@@ -1121,3 +1121,523 @@ h3 {
         justify-content: center;
     }
 }
+
+/* ===========================
+   MELHORIAS VISUAIS - VIBRÂNCIA & DESIGN
+   =========================== */
+
+/* Decorações e padrões */
+.section-decoration {
+    position: relative;
+    overflow: hidden;
+}
+
+.decoration-dots {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.decoration-dots-1 {
+    background: radial-gradient(circle, var(--primary-blue) 2px, transparent 2px);
+    background-size: 15px 15px;
+    top: -40px;
+    right: -40px;
+}
+
+.decoration-dots-2 {
+    background: radial-gradient(circle, var(--accent-green) 2px, transparent 2px);
+    background-size: 15px 15px;
+    bottom: -40px;
+    left: -40px;
+}
+
+/* Pain Points melhorados com cores */
+.pain-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.pain-point {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 15px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    border-left: 4px solid var(--warm-coral);
+    position: relative;
+    overflow: hidden;
+}
+
+.pain-point::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--warm-coral), transparent);
+    opacity: 0.05;
+    border-radius: 50%;
+}
+
+.pain-point:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(247, 152, 86, 0.15);
+    border-left-color: var(--soft-orange);
+    background: linear-gradient(135deg, rgba(252, 181, 116, 0.02), rgba(252, 181, 116, 0.01));
+}
+
+.pain-point p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    position: relative;
+    z-index: 1;
+}
+
+/* Benefit Cards com gradientes coloridos */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.benefit-card {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 15px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    border-top: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card:nth-child(1) {
+    border-top-color: var(--primary-blue);
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05), rgba(74, 144, 226, 0.02));
+}
+
+.benefit-card:nth-child(2) {
+    border-top-color: var(--accent-green);
+    background: linear-gradient(135deg, rgba(93, 217, 193, 0.05), rgba(93, 217, 193, 0.02));
+}
+
+.benefit-card:nth-child(3) {
+    border-top-color: var(--warm-coral);
+    background: linear-gradient(135deg, rgba(247, 152, 86, 0.05), rgba(247, 152, 86, 0.02));
+}
+
+.benefit-card:nth-child(4) {
+    border-top-color: var(--soft-orange);
+    background: linear-gradient(135deg, rgba(252, 181, 116, 0.05), rgba(252, 181, 116, 0.02));
+}
+
+.benefit-card:nth-child(5) {
+    border-top-color: var(--primary-blue);
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05), rgba(74, 144, 226, 0.02));
+}
+
+.benefit-card:nth-child(6) {
+    border-top-color: var(--accent-green);
+    background: linear-gradient(135deg, rgba(93, 217, 193, 0.05), rgba(93, 217, 193, 0.02));
+}
+
+.benefit-card:nth-child(7) {
+    border-top-color: var(--warm-coral);
+    background: linear-gradient(135deg, rgba(247, 152, 86, 0.05), rgba(247, 152, 86, 0.02));
+    grid-column: auto;
+}
+
+.benefit-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-card:hover::after {
+    opacity: 1;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+.benefit-card:nth-child(2) .benefit-icon,
+.benefit-card:nth-child(4) .benefit-icon {
+    animation-delay: 0.5s;
+}
+
+.benefit-card:nth-child(3) .benefit-icon,
+.benefit-card:nth-child(5) .benefit-icon {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.benefit-card p {
+    color: var(--text-dark);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+}
+
+/* Plan Cards melhorados */
+.plan-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-top: 4px solid var(--accent-green);
+}
+
+.plan-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-green), var(--warm-coral));
+    background-size: 200% 100%;
+}
+
+.plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(74, 144, 226, 0.2);
+}
+
+.plan-card-featured {
+    border: 2px solid var(--primary-blue);
+    transform: scale(1.02);
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.02), rgba(93, 217, 193, 0.02));
+}
+
+.plan-card-featured::after {
+    content: '🌟';
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.5rem;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+/* Urgency Cards com mais vibrância */
+.urgency-card {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    border-top: 4px solid var(--gray-light);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.urgency-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, var(--warm-coral), transparent);
+    opacity: 0.08;
+    border-radius: 50%;
+}
+
+.urgency-card-active {
+    border-top-color: var(--warm-coral);
+    background: linear-gradient(135deg, rgba(247, 152, 86, 0.05), rgba(252, 181, 116, 0.05));
+    box-shadow: 0 16px 40px rgba(247, 152, 86, 0.15);
+    transform: scale(1.02);
+}
+
+.urgency-card-active::after {
+    content: '⏰';
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.8rem;
+    animation: pulse-icon 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* Transformation Section com mais cores */
+.transformation {
+    background: linear-gradient(135deg, rgba(93, 217, 193, 0.08), rgba(247, 152, 86, 0.08));
+    position: relative;
+}
+
+.transformation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(74, 144, 226, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(93, 217, 193, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(247, 152, 86, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.transformation h2 {
+    position: relative;
+    z-index: 1;
+}
+
+/* Impact Box melhorado */
+.impact-box {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(93, 217, 193, 0.1));
+    padding: var(--spacing-xl);
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-blue);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.impact-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--accent-green), transparent);
+    opacity: 0.05;
+    border-radius: 50%;
+}
+
+.impact-box p {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    position: relative;
+    z-index: 1;
+}
+
+/* Agitate Section com padrão */
+.agitate {
+    background-color: var(--light-bg);
+    position: relative;
+}
+
+.agitate::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3));
+    pointer-events: none;
+}
+
+/* Feature List melhorado */
+.feature {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    background: rgba(74, 144, 226, 0.05);
+}
+
+.feature-icon {
+    color: var(--accent-green);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+    animation: checkMark 0.4s ease;
+}
+
+@keyframes checkMark {
+    0% {
+        transform: scale(0) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Rayani Approach melhorado */
+.rayani-approach {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.rayani-approach::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 50%;
+}
+
+.rayani-approach h3 {
+    color: var(--white);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    z-index: 1;
+}
+
+.rayani-approach p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    z-index: 1;
+}
+
+/* FAQ melhorado */
+.faq-item {
+    background: var(--light-bg);
+    margin-bottom: var(--spacing-md);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.faq-item:hover {
+    border-left-color: var(--accent-green);
+}
+
+.faq-item.active {
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--accent-green);
+    background: linear-gradient(135deg, rgba(93, 217, 193, 0.05), rgba(74, 144, 226, 0.05));
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    font-weight: 300;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+    color: var(--accent-green);
+}
+
+/* Final CTA melhorado */
+.final-cta {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(93, 217, 193, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.final-cta h2 {
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+}
+
+.final-message {
+    max-width: 700px;
+    margin: 0 auto var(--spacing-2xl);
+    position: relative;
+    z-index: 1;
+}
+
+.final-ctas {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    margin-bottom: var(--spacing-2xl);
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
