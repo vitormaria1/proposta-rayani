@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===========================
     const whatsappLinks = document.querySelectorAll('a[href^="https://wa.me"]');
     const phoneNumber = '5548999896879'; // Número Rayani
-    const message = 'Olá Rayani! Gostaria de saber mais sobre a consultoria de sono infantil.';
+    const message = 'Olá Rayani! Quero aproveitar a oferta dos Fundamentos do Sono Infantil por R$ 67.';
     const encodedMessage = encodeURIComponent(message);
 
     whatsappLinks.forEach(link => {
